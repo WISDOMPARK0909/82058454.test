@@ -22,7 +22,7 @@ spring:
       mode: embedded
 
 server:
-  port: 8081
+  port: 8080
 
 management:
   endpoints:
