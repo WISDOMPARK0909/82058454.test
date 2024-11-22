@@ -7,12 +7,12 @@ spec:
   template:
     spec:
       containers:
-        - name: 82058454.test
+        - name: 82058454-test
           command: ["java","-jar","/app.jar"]
           args: ["--spring.config.location=file:/config/application.yml"]
           volumeMounts:
           - mountPath: /mnt/cloud-sample
-            name: 82058454.test-volume
+            name: 82058454-test-volume
             readOnly: false
             subPath: 82058454.test
           - mountPath: /config
@@ -20,12 +20,12 @@ spec:
             readOnly: true
                           
       volumes:
-      - name: 82058454.test-volume
+      - name: 82058454-test-volume
         persistentVolumeClaim:
           claimName: cepg-aa-std-pvc
       - name: application-properties
         configMap:
-          name: 82058454.test-configmap
+          name: 82058454-test-configmap
           items:
             - key: application.yml
               path: application.yml
